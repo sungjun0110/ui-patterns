@@ -1,26 +1,42 @@
 const tabElms = document.getElementsByClassName('tab');
 
+let cursor;
+
 for (let i = 0; i < tabElms.length; i++) {
-    tabElms[i].addEventListener('click', (tab) => {
-        openHandler(tab);
+    tabElms[i].addEventListener('click', () => {
+        openHandler(i);
     })
 }
 
-function openHandler(tab) {
-    closeTabs();
-    tab.target.nextElementSibling.classList.toggle('closed');
-    arrowHandler(tab);
+function openHandler(i) {
+    if (cursor === i) {
+        closeAllTabs();
+        closeAllArrows();
+    } else {
+        closeAllTabs();
+        closeAllArrows();
+        openTab(i);
+        openArrow(i);
+    } 
 }
 
-function closeTabs() {
+function closeAllTabs() {
     for (let i = 0; i < tabElms.length; i++) {
         tabElms[i].nextElementSibling.classList.add('closed');
     }
 }
 
-function arrowHandler(tab) {
+function openTab(i) {
+    tabElms[i].nextElementSibling.classList.remove('closed');
+    cursor = i;
+}
+
+function closeAllArrows() {
     for (let i = 0; i < tabElms.length; i++) {
         tabElms[i].childNodes[1].classList.add('closed');
     }
-    tab.target.childNodes[1].classList.remove('closed');
+}
+
+function openArrow(i) {
+    tabElms[i].childNodes[1].classList.remove('closed');
 }
