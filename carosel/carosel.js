@@ -31,6 +31,7 @@ prevBtn.addEventListener('click', () => {
     btnHandler(-1);
 })
 
+// updates image and content
 function btnHandler(x) {
     cursor += x;
     if (cursor >= imgUrls.length) {
@@ -43,6 +44,7 @@ function btnHandler(x) {
     contentElm.innerText = contents[cursor];
 }
 
+// adds end class to deactivate button
 function btnEndHandler() {
     if (cursor === imgUrls.length - 1) nextBtn.classList.add('end');
     else if (cursor === 0) prevBtn.classList.add('end');
