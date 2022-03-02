@@ -33,6 +33,21 @@ prevBtn.addEventListener('click', () => {
 
 function btnHandler(x) {
     cursor += x;
-    if (cursor >= imgUrls.length || cursor < 0) return;
+    if (cursor >= imgUrls.length) {
+        cursor = imgUrls.length - 1;
+    } else if (cursor < 0) {
+        cursor = 0;
+    }
+    btnEndHandler();
     imgElm.setAttribute('src', imgUrls[cursor]);
+    contentElm.innerText = contents[cursor];
+}
+
+function btnEndHandler() {
+    if (cursor === imgUrls.length - 1) nextBtn.classList.add('end');
+    else if (cursor === 0) prevBtn.classList.add('end');
+    else {
+        nextBtn.classList.remove('end');
+        prevBtn.classList.remove('end');
+    }
 }

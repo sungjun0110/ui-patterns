@@ -10,7 +10,7 @@ html, body {
     border: solid 1px #888;
     position: relative;
     width: 80vw;
-    height: 40vh;
+    height: 400px;
     margin: 0 auto;
 }
 
@@ -34,6 +34,17 @@ html, body {
     background: #444;
 }
 
+#carosel-buttons button.end {
+    background: #bbb;
+}
+
 #carosel-pane {
     margin: 0 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pane-image {
+    padding: 10px;
 }
