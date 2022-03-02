@@ -3,10 +3,10 @@ html, body {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 #accordion-container {
+    margin-top: 10vh;
     width: 800px;
     height: 500px;
 }
@@ -16,5 +16,15 @@ html, body {
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 1em;
+    padding: 1em 2em;
+}
+
+.pane {
+    height: 140px;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+}
+
+.pane.closed {
+    height: 0px;
 }
