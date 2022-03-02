@@ -28,3 +28,11 @@ html, body {
 .pane.closed {
     height: 0px;
 }
+
+.tab-arrow {
+    transition: all .25s ease-in-out;
+}
+
+.tab-arrow.closed {
+    transform: rotate(180deg);
+}
