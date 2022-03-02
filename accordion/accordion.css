@@ -17,6 +17,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     padding: 1em 2em;
+    user-select: none;
 }
 
 .pane {

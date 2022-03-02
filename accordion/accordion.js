@@ -1,6 +1,6 @@
 const tabElms = document.getElementsByClassName('tab');
 
-let cursor;
+let cursor = null;
 
 for (let i = 0; i < tabElms.length; i++) {
     tabElms[i].addEventListener('click', () => {
@@ -24,6 +24,7 @@ function closeAllTabs() {
     for (let i = 0; i < tabElms.length; i++) {
         tabElms[i].nextElementSibling.classList.add('closed');
     }
+    cursor = null;
 }
 
 function openTab(i) {
