@@ -48,11 +48,10 @@ html, body {
 
 img {
     width: 30%;
-    border: 1px solid black;
+    object-fit: contain;
+    padding: 10px;
 }
 
 .content {
     width: 70%;
-    border: 1px solid red;
-
 }
