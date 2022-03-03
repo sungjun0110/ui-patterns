@@ -8,4 +8,25 @@ html, body {
 
 #modal-container {
     display: grid;
+    grid-template: 200px 200px / 200px 200px;
+    row-gap: 30px;
+    column-gap: 40px;
+}
+
+.tile {
+    border: solid 1px black;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.page.shown {
+    visibility: visible;
 }
