@@ -19,14 +19,21 @@ html, body {
 
 .page {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
-    background-color: red;
+    background-color: rgba(255,255,255,.6);
     visibility: hidden;
     width: 100vw;
     height: 100vh;
 }
 
-.page.shown {
+.page.active {
     visibility: visible;
+}
+
+.content {
+    border: 1px solid black;
 }
