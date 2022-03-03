@@ -37,7 +37,7 @@ html, body {
     border: 1px solid black;
     position: relative;
     background-color: white;
-    box-shadow: 0 0 40px #666;
+    box-shadow: 0 0 50px #666;
     width: 800px;
     display: flex;
     flex-direction: row;
