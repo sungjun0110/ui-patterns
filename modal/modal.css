@@ -8,13 +8,9 @@ html, body {
 
 #modal-container {
     display: grid;
-    grid-template: 200px 200px / 200px 200px;
+    grid-template: auto auto / auto auto auto;
     row-gap: 30px;
     column-gap: 40px;
-}
-
-.tile {
-    border: solid 1px black;
 }
 
 .page {
@@ -24,16 +20,42 @@ html, body {
     align-items: center;
     top: 0;
     left: 0;
-    background-color: rgba(255,255,255,.6);
+    background-color: rgba(255,255,255,.8);
     visibility: hidden;
+    opacity: 0;
     width: 100vw;
     height: 100vh;
+    transition: opacity 0.25s ease-in-out;
 }
 
 .page.active {
     visibility: visible;
+    opacity: 1;
 }
 
 .content {
     border: 1px solid black;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 0 40px #666;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+}
+
+.content button:hover {
+    color: red;
+}
+
+.info {
+    padding: 1em;
 }
