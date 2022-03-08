@@ -1,6 +1,6 @@
 # ui-patterns
 
-Demo[https://sungjun0110.github.io/ui-patterns/]
+[Demo](https://sungjun0110.github.io/ui-patterns/)
 
 ### UI for content
 ___
