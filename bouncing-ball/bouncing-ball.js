@@ -10,7 +10,7 @@ let isOut = false, isDragging = false;
 vy = 0;
 vx = 0;
 offsetX = 0;
-offsetY = 0;
+offsetY = radius;
 
 function drawBall(newX, newY, newRadius, newColor, newElasticity) {
     x = newX;
