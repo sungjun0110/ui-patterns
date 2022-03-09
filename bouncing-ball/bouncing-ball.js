@@ -67,4 +67,5 @@ function animate() {
 }
 
 drawBall(canvas.width/2, 0, 70, 'blue', .7);
+// starts animation
 animate();
