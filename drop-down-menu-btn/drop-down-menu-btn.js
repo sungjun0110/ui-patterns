@@ -12,6 +12,7 @@ container.addEventListener('mouseleave', () => {
 menuBtn.addEventListener('mouseenter', () => {
     menuActiveHandler();
     btnBackgroundHandler('active');
+    activeLinks(0);
 })
 
 function menuActiveHandler() {
@@ -35,8 +36,17 @@ function btnBackgroundHandler(status) {
 function deactiveHandler() {
     menuActiveHandler();
     btnBackgroundHandler();
+    deactiveLinks();
 }
 
-// for (let i = 0; i < menuArr.length; i++) {
-//     menuArr[i].addEventListener('')
-// }
+function activeLinks(i) {
+    if (i >= menuArr.length) return;
+    menuArr[i].style.transform = 'translateY(0em)';
+    setTimeout(() => activeLinks(i+1), 100);
+}
+
+function deactiveLinks() {
+    for (let i = 0; i < menuArr.length; i++) {
+        menuArr[i].style.transform = 'translateY(.25em)';
+    }
+}

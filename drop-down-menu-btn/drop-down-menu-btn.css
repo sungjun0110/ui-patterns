@@ -4,6 +4,7 @@ html, body {
 
 #container {
     width: 157px;
+    margin: 5em auto;
 }
 
 #menu-btn {
@@ -101,6 +102,7 @@ a {
     color: rgb(50, 50, 54);
     transition: all 0.25s ease-in-out;
     border-radius: .5em;
+    transform: translateY(.25em);
 }
 
 a:hover {
