@@ -3,30 +3,67 @@ html, body {
 }
 
 button {
-    background-color: white;
+    overflow: hidden;
+    position: relative;
     border: none;
+    border-radius: 1em;
     color: rgb(50, 50, 54);
-    padding: 1em;
+    height: 2em;
+    width: 4em;
     font-size: 1.25em;
     font-weight: bold;
+    transition: 0.2s all ease-in-out;
 }
 
-#dd-menu {
-    background-color: white;
-    border: 1px solid rgb(50, 50, 54);
-    padding: 1em;
-    display: flex;
+.btn-text {
+    position: absolute;
+    display: inline-block;
+    height: 10px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0);
+}
+
+.btn-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(45deg, rgb(234, 234, 245) 0%, rgb(145, 233, 195) 50%, rgb(145, 233, 195) 100%);
+    transform: translateX(-33%);
+    z-index: 1;
+    transition: .25s all ease-in-out;
+}
+
+.btn-background:hover {
+    transform: translateX(0%)
+}
+
+#dropdown-menu {
+    margin-top: .5em;
+    background-color: rgb(234, 234, 245);
+    padding: .25em 1em;
     flex-direction: column;
-    width: 300px;
+    width: 125px;
     border-radius: 1em;
+    transition: 0.25s all ease-in-out;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown-content.show {
+    display: block;
 }
 
 a {
     text-decoration: none;
-    background-color: white;
+    display: block;
     font-weight: bold;
-    margin: .5em 0;
-    font-size: 1.5em;
+    margin: .25em 0;
+    font-size: 1.25em;
     color: rgb(50, 50, 54);
     transition: all 0.25s ease-in-out;
     padding: .25em;
