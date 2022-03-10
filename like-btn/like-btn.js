@@ -1,4 +1,6 @@
 const thumbsUp = document.getElementsByClassName('fa-thumbs-up')[0];
+const likeBtn = document.getElementsByClassName('like-btn')[0];
+const heart = document.getElementsByClassName('heart')[0];
 
 thumbsUp.addEventListener('click', () => {
     likeHandler();
@@ -20,4 +22,14 @@ function animateLikeBtn() {
     setTimeout(() => {
         thumbsUp.style.transform = 'rotate(0deg)';
     }, 300);
+}
+
+likeBtn.addEventListener('click', () => {
+    clickHandler();
+});
+
+function clickHandler() {
+    likeBtn.classList.toggle('clicked');
+    heart.classList.toggle('clicked');
+    console.log(likeBtn.childNodes);
 }
