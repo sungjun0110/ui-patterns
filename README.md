@@ -2,6 +2,8 @@
 
 [Demo](https://sungjun0110.github.io/ui-patterns/)
 
+JavaScript / HTML / CSS
+
 ### Buttons
 ___
 Dropdown Menu Button
