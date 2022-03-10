@@ -6,4 +6,18 @@ thumbsUp.addEventListener('click', () => {
 
 function likeHandler(){
     thumbsUp.classList.toggle('active');
+    animateLikeBtn();
+}
+
+function animateLikeBtn() {
+    thumbsUp.style.transform = 'rotate(10deg)';
+    setTimeout(() => {
+        thumbsUp.style.transform = 'rotate(-10deg)';
+    }, 100);
+    setTimeout(() => {
+        thumbsUp.style.transform = 'rotate(10deg)';
+    }, 200);
+    setTimeout(() => {
+        thumbsUp.style.transform = 'rotate(0deg)';
+    }, 300);
 }
