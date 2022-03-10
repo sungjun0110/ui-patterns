@@ -1,0 +1,11 @@
+i {
+    color: #888;
+}
+
+i:hover {
+    transform: scaleX(1.2) scaleY(1.2);
+}
+
+i.active {
+    color: rgb(62, 62, 252);
+}
