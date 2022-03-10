@@ -24,9 +24,10 @@ li {
     height: 200px;
 }
 
+/* Button 1 */
 #btn1 {
     position: relative;
-    font-size: 2em;
+    font-size: 1.5em;
     padding: .5em 1em;
     border-radius: .5em;
     border: .1em rgb(255, 174, 24) solid;
@@ -37,7 +38,7 @@ li {
 
 #btn1 span {
     position: absolute;
-    width: 25%;
+    width: 40%;
     height: 150%;
     top:0;
     border-radius: 2em 2em 0 0;
@@ -59,7 +60,7 @@ li {
 }
 
 #btn1:hover span:nth-child(2) {
-    animation-delay: .15s;
+    animation-delay: .1s;
 }
 
 #btn1 span:nth-child(3) {
@@ -67,7 +68,7 @@ li {
 }
 
 #btn1:hover span:nth-child(3) {
-    animation-delay: .3s;
+    animation-delay: .2s;
 }
 
 #btn1 span:nth-child(4) {
@@ -75,7 +76,7 @@ li {
 }
 
 #btn1:hover span:nth-child(4) {
-    animation-delay: .45s;
+    animation-delay: .3s;
 }
 
 @keyframes btn1 {
@@ -85,4 +86,28 @@ li {
     100% {
         transform: translateY(-33%);
     }
+}
+
+/* Button 2 */
+#btn2 {
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    border-radius: 1.25em;
+    width: 2.5em;
+    height: 2.5em;
+    transition: 0.2s all ease-in-out;
+    background-color: rgb(68, 167, 174);
+}
+
+#btn2 span {
+    color: rgba(255, 255, 255, 0);
+    transition: 0.2s all ease-in-out;
+}
+
+#btn2:hover {
+    width: 6em;
+}
+
+#btn2:hover span {
+    color: rgb(255, 255, 255, 1);
 }
