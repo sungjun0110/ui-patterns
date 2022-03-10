@@ -5,11 +5,12 @@ html, body {
 
 #icon-container {
     width: calc(100%-20px);
+    margin-top: 5em;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    gap: 1em;
+    gap: 2em;
 }
 
 i {
