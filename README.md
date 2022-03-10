@@ -8,6 +8,10 @@ JavaScript / HTML / CSS
 ___
 Dropdown Menu Button
 
+Like Buttons
+
+Simple Buttons
+
 ### UI for content
 ___
 Carousel/Slideshow
