@@ -101,7 +101,6 @@ a {
     font-size: 1.25em;
     color: rgb(50, 50, 54);
     transition: all 0.25s ease-in-out;
-    border-radius: .5em;
     transform: translateY(.25em);
 }
 
