@@ -10,40 +10,42 @@
     <title>Sidebar</title>
 </head>
 <body>
-    <nav id="left-sidebar">
-        <button><i class="fa-solid fa-angles-right"></i></button>
+    <nav id="left-sidebar" class="closed">
+        <button id="left-sidebar-button"><i class="fa-solid fa-angles-right"></i></button>
         <ul>
             <li>
                 <div class="icon-container">
                     <i class="fa-solid fa-house"></i>
                 </div>
-                Home
+                <span class="item">Home</span>
             </li>
             <li>
                 <div class="icon-container">
                     <i class="fa-solid fa-question"></i>
                 </div>
-                About
+                <span class="item">About</span>
             </li>
             <li>
                 <div class="icon-container">
                     <i class="fa-solid fa-boxes-stacked"></i>
                 </div>
-                Products
+                <span class="item">Products</span>
             </li>
             <li>
                 <div class="icon-container">
                     <i class="fa-solid fa-phone"></i>
                 </div>
-                Contact Us
+                <span class="item">Contact Us</span>
             </li>
             <li>
                 <div class="icon-container">
                     <i class="fa-solid fa-user"></i>
                 </div>
-                Account
+                <span class="item">Account</span>
             </li>
         </ul>
+
+        <a href="#" class="sign-out-button">Sign Out</a>
     </nav>
 </body>
 </html>

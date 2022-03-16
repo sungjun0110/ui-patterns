@@ -5,39 +5,73 @@ html, body {
     margin: 0;
 }   
 
-#left-sidebar {
-    position: relative;
-    width: 350px;
-    height: 100vh;
-    background-color: rgb(175, 175, 255);
-    font-family: 'Baloo 2', cursive;
+:root {
+    --color1: rgb(175, 175, 255);
+    --color2: rgb(225, 225, 255);
 }
 
-#left-sidebar button {
+#left-sidebar {
+    position: relative;
+    width: 260px;
+    height: 100vh;
+    background-color: var(--color1);
+    font-family: 'Baloo 2', cursive;
+    transition: 0.25s width ease-in-out;
+}
+
+#left-sidebar.closed {
+    width: 5em;
+}
+
+#left-sidebar-button {
     position: absolute;
+    width: 80px;
     right: 0;
     font-size: 2em;
     background: none;
     border: none;
-    margin: .3em .3em;
+    color: rgba(0, 0, 0, 1);
+    margin: .3em 0;
+    transition: 0.1s all ease-in-out;
+}
+
+#left-sidebar-button:hover {
+    color: var(--color2);
+}
+
+#left-sidebar-button.active {
+    transform: rotate(180deg);
 }
 
 ul {
     margin: 0;
-    padding: 1em;
+    padding: 3em 0;
 }
 
 li {
     list-style: none;
     font-size: 2em;
+    width: 260px;
+    height: 2em;
     display: flex;
+    justify-content: left;
     flex-direction: row;
-    gap: .5em;
     margin-top: 1em;
 }
 
+li:hover {
+    color: var(--color2);
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 0 1em 1em 0;
+}
+
+#left-sidebar.closed li {
+    width: 80px;
+}
+
 .icon-container {
-    width: 1.5em;
+    min-width: 80px;
+    height: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,3 +82,34 @@ li i::before {
     position: relative;
 }
 
+.item {
+    height: 2em;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+    width: 200px;
+    transition: 0.2s opacity, .2s transform ease-in-out;
+    opacity: 1;
+}
+
+#left-sidebar.closed .item {
+    width: 0px;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.sign-out-button {
+    position: absolute;
+    bottom: 1em;
+    text-align: center;
+    width: 5em;
+    bottom: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#left-sidebar.closed .sign-out-button {
+    display: none;
+    position: absolute;
+}
