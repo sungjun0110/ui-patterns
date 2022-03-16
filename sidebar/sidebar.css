@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+html, body {
+    width: 100%;
+    margin: 0;
+}   
+
+#left-sidebar {
+    position: relative;
+    width: 350px;
+    height: 100vh;
+    background-color: rgb(175, 175, 255);
+    font-family: 'Baloo 2', cursive;
+}
+
+#left-sidebar button {
+    position: absolute;
+    right: 0;
+    font-size: 2em;
+    background: none;
+    border: none;
+    margin: .3em .3em;
+}
+
+ul {
+    margin: 0;
+    padding: 1em;
+}
+
+li {
+    list-style: none;
+    font-size: 2em;
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    margin-top: 1em;
+}
+
+.icon-container {
+    width: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li i::before {
+    width: 1.5em;
+    position: relative;
+}
+

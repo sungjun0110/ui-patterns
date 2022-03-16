@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./sidebar.css">
+    <script defer src="./sidebar.js"></script>
     <title>Sidebar</title>
 </head>
 <body>
-    <nav>
+    <nav id="left-sidebar">
+        <button><i class="fa-solid fa-angles-right"></i></button>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Products</li>
-            <li>History</li>
-            <li>Account</li>
+            <li>
+                <div class="icon-container">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                Home
+            </li>
+            <li>
+                <div class="icon-container">
+                    <i class="fa-solid fa-question"></i>
+                </div>
+                About
+            </li>
+            <li>
+                <div class="icon-container">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                Products
+            </li>
+            <li>
+                <div class="icon-container">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                Contact Us
+            </li>
+            <li>
+                <div class="icon-container">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                Account
+            </li>
         </ul>
     </nav>
 </body>
