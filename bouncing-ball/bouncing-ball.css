@@ -3,3 +3,13 @@ html, body {
     height: 100%;
     margin: 0;
 }   
+
+#control-panel {
+    position: absolute;
+    left: 5vh;
+    top: 5vw;
+}
+
+#elasticity-scale {
+    margin: 20px 0;
+}

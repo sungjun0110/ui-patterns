@@ -1,16 +1,17 @@
+// elements for the ball
 const canvas = document.getElementById('bouncing-ball');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
-let x, y, vx, vy, offsetX, offsetY, elasticity, radius, color;
-let gravity = 9.8 * 600;
-let isOut = false, isDragging = false;
+// elements for the control panel
+const elasticityLabel = document.getElementById('elasticity-label');
+const elasticityScale = document.getElementById('elasticity-scale');
+const restartBtn = document.getElementById('restart-button');
 
-vy = 0;
-vx = 0;
-offsetX = 0;
-offsetY = radius;
+let x, y, vx, vy, offsetX, offsetY, radius, color, elasticity = elasticityScale.value;
+let gravity = 9.8 * 600;
+let isOut = false, isDragging = false, restart=false;
 
 function drawBall(newX, newY, newRadius, newColor, newElasticity) {
     x = newX;
@@ -44,7 +45,7 @@ function fall() {
 };
 
 // calculate the ball speed in Y axis
-function calculateVy(elasticity = 1.0, direction = '') {
+function calculateVy(elasticity, direction = '') {
     if (direction === 'hit') {
         vy = -vy * elasticity;
     } else {
@@ -61,11 +62,40 @@ function calculateY() {
 }
 
 function animate() {
+    if (restart) return;
     requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     fall();
 }
 
-drawBall(canvas.width/2, 0, 70, 'blue', .7);
+function stopAnimation() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function initBall() {
+    vy = 0;
+    vx = 0;
+    gravity = 9.8 * 600;
+    offsetX = 0;
+    offsetY = radius*2;
+    restart = false;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall(canvas.width/2, 0, 70, 'blue', elasticity);
+    animate();
+}
 // starts animation
-animate();
+initBall();
+
+elasticityLabel.innerText = elasticityScale.value;
+
+elasticityScale.addEventListener('change', () => {
+    elasticityLabel.innerText = elasticityScale.value;
+    elasticity = elasticityScale.value;
+});
+
+restartBtn.addEventListener('click', () => {
+    restart = true;
+    setTimeout(() => {
+        initBall();
+    }, 100);
+})
