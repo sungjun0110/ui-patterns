@@ -1,0 +1,48 @@
+#panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.panel {
+    text-align: center;
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
+
+.rounded {
+    border-radius: 30px;
+}
+
+.dashed {
+    border: 2px dashed black;
+}
+
+.shadow {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+.thick-left-border {
+    border-left: 5px dodgerblue solid;
+}
+
+.thick-right-border {
+    border-right: 5px dodgerblue solid;
+}
+
+.thick-bottom-border {
+    border-bottom: 5px dodgerblue solid;
+}
+
+.thick-top-border {
+    border-top: 5px dodgerblue solid;
+}

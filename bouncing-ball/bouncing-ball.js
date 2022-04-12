@@ -9,9 +9,9 @@ const elasticityLabel = document.getElementById('elasticity-label');
 const elasticityScale = document.getElementById('elasticity-scale');
 const restartBtn = document.getElementById('restart-button');
 
-let x, y, vx, vy, offsetX, offsetY, radius, color, elasticity = elasticityScale.value;
-let gravity = 9.8 * 600;
-let isOut = false, isDragging = false, restart=false;
+let x, y, vx, vy, offsetX, offsetY, radius, color, hit = false, elasticity = Number(elasticityScale.value);
+let gravity = .05;
+let isOut = false, isDragging = false, restart = false;
 
 function drawBall(newX, newY, newRadius, newColor, newElasticity) {
     x = newX;
@@ -28,34 +28,46 @@ function drawBall(newX, newY, newRadius, newColor, newElasticity) {
 }
 
 function fall() {
-    if (y + radius >= canvas.height) {
-        if (Math.abs(vy) <= 0.1) {
+    if (y + radius === canvas.height) {
+        console.log('here ', Math.abs(vy) <= 6);
+        
+        if (Math.abs(vy) <= 6) {
+            console.log('here');
             vy = 0;
-            y = canvas.height - radius;
+            return drawBall(x, y, radius, color, elasticity);
         }
-        if (Math.abs(vy) > 0.1) {
-            calculateVy(elasticity, 'hit');
+        else {
+            calculateVy(elasticity, true);
             calculateY();
-        } 
+        }
     } else {
-        calculateVy(elasticity);
+        calculateVy(elasticity, false);
         calculateY();
     }
     drawBall(x, y, radius, color, elasticity);
 };
 
 // calculate the ball speed in Y axis
-function calculateVy(elasticity, direction = '') {
-    if (direction === 'hit') {
-        vy = -vy * elasticity;
+function calculateVy(elasticity, hit) {
+    if (hit) {
+        console.log(vy, ' ', elasticity);
+        // vy = -1 * Math.sqrt(2 * (canvas.height - offsetY) * gravity) * elasticity;
+        vy = -1 * Number(parseFloat(vy * elasticity).toFixed(2));
+        // console.log(vy * elasticity, ' ', elasticity);
     } else {
-        vy += gravity/60;
+        if ( vy < 0 && Math.abs(Number(parseFloat(gravity * 60).toFixed(2))) > Math.abs(vy)) {
+            console.log('test', vy);
+            vy = 0;
+        } else {
+            vy += Number(parseFloat(gravity * 60).toFixed(2));
+        }
     }
 }
 
 // calculate new position Y of a ball
 function calculateY() {
-    y += (vy/60) + gravity/7200;
+    y += vy;
+    console.log(y);
     if (y + radius >= canvas.height) {
         y = canvas.height - radius;
     }
@@ -66,31 +78,27 @@ function animate() {
     requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     fall();
-}
-
-function stopAnimation() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (vy === 0 && y === canvas.height - radius) {
+        return;
+    }
 }
 
 function initBall() {
     vy = 0;
     vx = 0;
-    gravity = 9.8 * 600;
     offsetX = 0;
-    offsetY = radius*2;
+    offsetY = radius;
     restart = false;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBall(canvas.width/2, 0, 70, 'blue', elasticity);
+    drawBall(canvas.width/2, offsetY, 70, 'blue', elasticity);
     animate();
 }
-// starts animation
-initBall();
 
 elasticityLabel.innerText = elasticityScale.value;
 
 elasticityScale.addEventListener('change', () => {
     elasticityLabel.innerText = elasticityScale.value;
-    elasticity = elasticityScale.value;
+    elasticity = Number(elasticityScale.value);
 });
 
 restartBtn.addEventListener('click', () => {
@@ -99,3 +107,7 @@ restartBtn.addEventListener('click', () => {
         initBall();
     }, 100);
 })
+
+// init the ball
+drawBall(canvas.width/2, offsetY, 70, 'blue', elasticity);
+initBall();
