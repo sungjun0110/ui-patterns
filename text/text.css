@@ -1,0 +1,47 @@
+#panels {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#texts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.text {
+    text-align: center;
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.sans-serif {
+    font-family: sans-serif;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.font-red {
+    color: red;
+}
+
+.font-dodgerblue {
+    color: dodgerblue;
+}
+
+.font-25px {
+    font-size: 25px;
+}
+
+.font-shadow {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.font-red-shadow {
+    text-shadow: 3px 3px 5px rgba(255, 0, 0, 0.5)
+}
