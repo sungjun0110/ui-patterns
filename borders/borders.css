@@ -10,7 +10,12 @@
     margin: 10px auto;
 }
 
+
 .red {
+    background-color: red;
+}
+
+.hover-red:hover { 
     background-color: red;
 }
 
@@ -24,6 +29,10 @@
 }
 
 .dashed {
+    border: 2px dashed black;
+}
+
+.hover-dahsed:hover {
     border: 2px dashed black;
 }
 
