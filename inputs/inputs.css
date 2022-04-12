@@ -1,6 +1,7 @@
 form {
     width: 500px;
     font-family: sans-serif;
+    margin: 50px 30px;
 }
 
 form label {
@@ -53,4 +54,39 @@ form input {
 #form1 .submit:hover {
     background: rgb(230, 173, 182);
     color:rgb(161, 21, 237);
+}
+
+#form2 {
+    background-color: #ddd;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+#form2 h1 {
+    margin: 0;
+    color: #333;
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+
+#form2 label {
+    color: #333;
+}
+
+#form2 .input {
+    border: #aaa solid 1px;
+    padding: 10px;
+    width: calc(100% - 30px);
+    margin: 10px 0;
+}
+
+#form2 .input:focus {
+    outline: none;
+    border: 1px #333 solid;
+}
+
+#form2 .submit {
+    padding: 5px 10px;
+    margin-top: 15px;
+    color: #333;
 }
