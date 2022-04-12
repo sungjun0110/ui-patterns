@@ -1,0 +1,56 @@
+form {
+    width: 500px;
+    font-family: sans-serif;
+}
+
+form label {
+    display: block;
+}
+
+form input {
+    display: block;
+}
+
+#form1 h1 {
+    background-color: pink;
+    padding: 10px;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    color: rgb(185, 79, 242);
+}
+
+#form1 label {
+    color: rgb(185, 79, 242);
+    margin: 10px;
+    font-size: 20px;
+}
+
+#form1 .input {
+    background-color: none;
+    border: none;
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 1px solid pink;
+    margin-bottom: 10px;
+}
+
+#form1 .input:focus {
+    outline: none;
+    border-bottom: 1px solid rgb(185, 79, 242);
+}
+
+#form1 .submit {
+    color:rgb(185, 79, 242);
+    background: pink;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#form1 .submit:hover {
+    background: rgb(230, 173, 182);
+    color:rgb(161, 21, 237);
+}
