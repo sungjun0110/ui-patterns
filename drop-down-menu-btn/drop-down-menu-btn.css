@@ -116,10 +116,12 @@ a:hover {
 
 #circle-menu-button {
     background-color: blue;
-    border-radius: 200px;
+    border-radius: 50%;
     border: none;
     color: white;
-    padding: 10px 20px;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
 }
 
 #circle-menu-button:hover {
@@ -127,5 +129,48 @@ a:hover {
 }
 
 #circle-menu {
-    display: none;
+    position: relative;
+    display: block;
+}
+
+#circle-menu.active {
+    display: block;
+}
+
+#circle-menu ul {
+    list-style: none;
+    width: 0;
+    padding-inline-start: 0;
+}
+
+#circle-menu li {
+    position: absolute;
+    color: rgba(0, 0, 0, 0);
+    top: -60px;
+    left: 0;
+    z-index: -1;
+    transition: 0.25s ease-in-out all;
+}
+
+#circle-menu.active li {
+    color: rgba(0, 0, 0, 1);
+}
+
+#circle-menu.active li:nth-child(1) {
+    left: 100px;
+}
+
+#circle-menu.active li:nth-child(2) {
+    top: -10px;
+    left: 85px;
+}
+
+#circle-menu.active li:nth-child(3) {
+    top: 20px;
+    left: 55px;
+}
+
+#circle-menu.active li:nth-child(4) {
+    top: 40px;
+    left: 30px;
 }
