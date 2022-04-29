@@ -7,7 +7,7 @@ html, body {
     justify-content: space-evenly;
 }
 
-.container {
+#container {
     width: 157px;
 }
 
@@ -113,6 +113,11 @@ a:hover {
 }
 
 /* circle menu button */
+
+#circle-button-container {
+    width: 160px;
+    height: 150px;
+}
 
 #circle-menu-button {
     background-color: blue;

@@ -1,11 +1,11 @@
-const container = document.getElementsByClassName('container');
+const container = document.getElementById('container');
 const menuBtn = document.getElementById('menu-btn');
 const btnBackground = document.getElementsByClassName('btn-background')[0];
 const dropdownMenu = document.getElementById('dropdown-menu');
 const menuDiv = document.getElementsByClassName('dropdown-content')[0];
 const menuArr = document.getElementsByTagName('a');
 
-container[0].addEventListener('mouseleave', () => {
+container.addEventListener('mouseleave', () => {
     deactiveHandler();
 })
 
@@ -53,11 +53,12 @@ function deactiveLinks() {
 
 const circleMenuBtn = document.getElementById('circle-menu-button');
 const circleMenuContent = document.getElementById('circle-menu');
+const circleMenuContainer = document.getElementById('circle-button-container')
 
 circleMenuBtn.addEventListener('mouseenter', () => {
     circleMenuContent.classList.add('active');
 });
 
-container[1].addEventListener('mouseleave', () => {
+circleMenuContainer.addEventListener('mouseleave', () => {
     circleMenuContent.classList.remove('active');
 })
