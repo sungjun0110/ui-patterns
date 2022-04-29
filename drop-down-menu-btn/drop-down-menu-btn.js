@@ -50,3 +50,6 @@ function deactiveLinks() {
         menuArr[i].style.transform = 'translateY(.25em)';
     }
 }
+
+const circleMenuBtn = document.getElementById('circle-menu-button');
+const circleMenuContent = document.getElementById('circle-menu');

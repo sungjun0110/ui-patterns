@@ -1,7 +1,12 @@
+#forms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 form {
     width: 500px;
     font-family: sans-serif;
-    margin: 50px 30px;
+    margin: 50px auto;
 }
 
 form label {
